@@ -8,19 +8,7 @@ const app = new App({
     appToken: process.env.SLACK_APP_TOKEN,
     socketMode: true
 });
-
-// app.command('/hello', async ({ command, ack, client }) => {
-//     // Acknowledge the command request
-//     await ack();
-//     await client.chat.postMessage({
-//         channel: command.channel_id,
-//         text: `Hello <@${command.user_id}>!`,
-//         thread_ts: command.ts,  // This will post it in the same thread
-//         reply_broadcast: true   // This will make the response visible to everyone in the channel
-//     });
-// });
   
-
 app.command('/plane', async ({ command, ack, respond, say}) => {
     await ack();
     // Splits the text to store action, board name, and ticket name
